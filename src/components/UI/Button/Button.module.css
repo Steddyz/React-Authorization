@@ -1,0 +1,13 @@
+.myButton {
+  background-color: #fff;
+  width: 10%;
+  padding: 5px 15px;
+  margin: 5px 0;
+  border: 1px solid rgb(128, 0, 111);
+  transition: all 0.2s ease-in;
+}
+
+.myButton:hover {
+  background-color: #000;
+  color: #fff;
+}

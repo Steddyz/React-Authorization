@@ -1,6 +1,8 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "../../firebase";
+import Button from "../UI/Button/Button";
+import "../../App.css";
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
@@ -25,9 +27,10 @@ export default function SignIn() {
 
   return (
     <div>
-      <form>
+      <form className="formm">
         <h2>Log in</h2>
         <input
+          className="myInput"
           value={email}
           onChange={(e) => {
             setEmail(e.target.value);
@@ -36,6 +39,7 @@ export default function SignIn() {
           placeholder="Enter your Email"
         />
         <input
+          className="myInput"
           value={password}
           onChange={(e) => {
             setPassword(e.target.value);
@@ -43,7 +47,7 @@ export default function SignIn() {
           type="password"
           placeholder="Enter your Passwors"
         />
-        <button onClick={logIn}>Login</button>
+        <Button onClick={logIn}>Login</Button>
         {error ? <p style={{ color: "red" }}>{error}</p> : ""}
       </form>
     </div>

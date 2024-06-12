@@ -1,6 +1,8 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "../../firebase";
+import Button from "../UI/Button/Button";
+import "../../App.css";
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
@@ -30,6 +32,7 @@ export default function SignUp() {
       <form onSubmit={register}>
         <h2>Create an account</h2>
         <input
+          className="myInput"
           value={email}
           onChange={(e) => {
             setEmail(e.target.value);
@@ -38,6 +41,7 @@ export default function SignUp() {
           placeholder="Enter your Email"
         />
         <input
+          className="myInput"
           value={password}
           onChange={(e) => {
             setPassword(e.target.value);
@@ -46,6 +50,7 @@ export default function SignUp() {
           placeholder="Enter your Passwors"
         />
         <input
+          className="myInput"
           value={copyPassword}
           onChange={(e) => {
             setCopyPassword(e.target.value);
@@ -53,7 +58,7 @@ export default function SignUp() {
           type="password"
           placeholder="Repeat your Passwors"
         />
-        <button>Create</button>
+        <Button>Create</Button>
         {error ? <p style={{ color: "red" }}>{error}</p> : ""}
       </form>
     </div>
