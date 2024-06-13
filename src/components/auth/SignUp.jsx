@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "../../firebase";
+import { Link } from "react-router-dom";
 import Button from "../UI/Button/Button";
 import "../../App.css";
 
@@ -60,6 +61,8 @@ export default function SignUp() {
         />
         <Button>Create</Button>
         {error ? <p style={{ color: "red" }}>{error}</p> : ""}
+        <hr></hr>
+        <p>if you have an account: </p> <Link to="/signIn">Go</Link>
       </form>
     </div>
   );

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { auth } from "../../firebase";
 import Button from "../UI/Button/Button";
 import "../../App.css";
+import { Link } from "react-router-dom";
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
@@ -47,8 +48,18 @@ export default function SignIn() {
           type="password"
           placeholder="Enter your Passwors"
         />
-        <Button onClick={logIn}>Login</Button>
+        <Link to="/AuthDetails">
+          <Button onClick={logIn}>Login</Button>
+        </Link>
+
+        <hr></hr>
+
         {error ? <p style={{ color: "red" }}>{error}</p> : ""}
+
+        <div>
+          <p>if you don't have an account:</p>
+          <Link to="/signUp">Register</Link>
+        </div>
       </form>
     </div>
   );

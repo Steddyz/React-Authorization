@@ -1,6 +1,7 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { auth } from "../../firebase";
+import { Link } from "react-router-dom";
 
 export default function AuthDetails() {
   const [authUser, setAuthUser] = useState(null);
@@ -31,7 +32,9 @@ export default function AuthDetails() {
           <button onClick={userSignOut}>Sing Out</button>
         </div>
       ) : (
-        <p>Signed Out</p>
+        <p>
+          Try again <Link to="/signUp"> Signed Out</Link>
+        </p>
       )}
     </div>
   );
